@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 public class UIEvents : MonoBehaviour
 {
-    public static UnityEvent EButtonRequested = new UnityEvent();
+    public static UnityEvent<ushort> ButtonChangeStateRequested = new UnityEvent<ushort>();
 
-    public static void SendEButtonRequested()
+    public static void SendEButtonRequested(ushort buttonID)
     {
-        EButtonRequested.Invoke();
+        ButtonChangeStateRequested.Invoke(buttonID);
     }
 }
